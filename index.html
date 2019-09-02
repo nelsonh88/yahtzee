@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upper Section</h1>
+    <div class="upper-section">
+        <form onsubmit="return false;"> 
+            <p>Aces:</p>
+            <input id="ones" type="number" min="0" max="5">
+            <input type="submit" onclick="checkAces();">
+            <p>Twos:</p>
+            <input id="twos" type="number" min="0" max="10">
+            <input type="submit" onclick="checkTwos();">
+            <p>Threes:</p>
+            <input id="threes" type="number" min="0" max="15">
+            <input type="submit" onclick="checkThrees();">
+            <p>Fours:</p>
+            <input id="fours" type="number" min="0" max="20">
+            <input type="submit" onclick="checkFours();">
+            <p>Fives:</p>
+            <input id="fives" type="number" min="0" max="35">
+            <input type="submit" onclick="checkFives();">
+            <p>Sixes:</p>
+            <input id="sixes" type="number" min="0" max="30">
+            <input type="submit" onclick="checkSixes();">
+        </form>
+        <form>
+            <button type="button" onclick="checkUpperSectionScoring()">Check Upper Score</button>
+        </form>
+        
+        <h1>Lower Section</h1>
+        <div class="lower-section">
+            <form onsubmit="return false;">
+                <p>3 of a kind:</p>
+                <input id="threeOfAKind" type="number" min="0" max="18">
+                <input type="submit" onclick="checkThreeOfAKind();">
+            <!-- <p>3 of a kind:</p>
+            <input type="checkbox" id="threeOfAKind">
+            <input type="button" value="check" onclick="checkThreeOfAKind()"> -->
+            <p>4 of a kind:</p>
+            <input id="fourOfAKind" type="number" min="0" max="24">
+            <input type="submit" onclick="checkFourOfAKind();">
+            <p>Full House:</p>
+            <input type="checkbox" id="fullHouse">
+            <input type="button" value="check" onclick="checkForFullHouse()">
+            <p>Sm Straight:</p>
+            <input type="checkbox" id="smallStraight">
+            <input type="button" value="check" onclick="checkForSmallStraight()">
+            <p>Lg. Straight:</p>
+            <input type="checkbox" id="largeStraight">
+            <input type="button" value="check" onclick="checkForLargeStraight()">
+            <!-- <p>YAHTZEE:</p>
+            <input id="sixes" type="number" min="0" max="36">
+            <input type="submit" onclick="checkSixes();">
+            <p>Chance:</p>
+            <input id="sixes" type="number" min="0" max="36">
+            <input type="submit" onclick="checkSixes();"> -->
+            </form>
+            <form>
+                <button type="button" onclick="checkLowerSectionScoring()">Check Lower Score</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
