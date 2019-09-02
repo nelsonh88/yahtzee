@@ -1,53 +1,61 @@
 // I am declaring variables
 
-let aces = 0;
-let twos = 0;
-let threes = 0;
-let fours = 0;
-let fives = 0;
-let sixes = 0;
-let threeOfAKind = 0;
-let fourOfAKind = 0;
-let fullHouse = false;
-let smallStraight = false;
-let largeStraight = false;
-let chance = 0;
-let yahtzee01 = false;
-let yahtzee02 = false;
-let yahtzee03 = false;
-// declaring variable for top half of the scoring 
-let upperSectionScoring = 0;
-// declaring variable for bottom half of the scoring 
-let lowerSectionScoring = 0;
-// declaring vaiable for the entire game score 
-let totalScore = 0;
+let aces = 0, 
+twos = 0,
+threes = 0,
+fours = 0,
+fives = 0,
+sixes = 0,
+upperSectionScoring = 0, 
+// ^^^ declaring variables for top half of the scoring 
+threeOfAKind = 0,
+fourOfAKind = 0,
+fullHouse = false,
+smallStraight = false,
+largeStraight = false,
+chance = 0,
+yahtzee01 = false,
+yahtzee02 = false,
+yahtzee03 = false,
+lowerSectionScoring = 0,
+// ^^^ declaring variables for bottom half of the scoring
+totalScore = 0;
+// ^^^ declaring vaiable for the entire game score 
 
-// uppersection scoring 
+// declaring a variable for the upper form so I can iterate through it
+let upperForm = document.getElementById("upper-section_scoring").elements;
 
-const checkAces = function () {
-    aces = document.getElementById("ones").value;
-    console.log(aces)
-}
-const checkTwos = function () {
-    twos = document.getElementById("twos").value;
-    console.log(twos)
-}
-const checkThrees = function () {
-    threes = document.getElementById("threes").value;
-    console.log(threes)
-}
-const checkFours = function () {
-    fours = document.getElementById("fours").value;
-    console.log(fours)
-}
-const checkFives = function () {
-    fives = document.getElementById("fives").value;
-    console.log(fives)
-}
-const checkSixes = function () {
-    sixes = document.getElementById("sixes").value;
-    console.log(sixes)
-}
+
+// uppersection scoring  
+const checkUpperSectionScoring = function  () {
+    for (let i = 0; i < upperForm.length; i++) {
+        let numberValues = upperForm[i].id
+        // console.log('this is the property in obj', Object.keys(objOfNumVariable))
+        if (numberValues === 'aces') {
+            aces = document.getElementById(numberValues).value;
+            console.log(aces)
+        } else if (numberValues === 'twos') {
+            twos = document.getElementById(numberValues).value;
+        } else if (numberValues === 'threes') {
+            threes = document.getElementById(numberValues).value;
+        } else if (numberValues === 'fours') {
+            fours = document.getElementById(numberValues).value;
+        } else if (numberValues === 'fives') {
+            fives = document.getElementById(numberValues).value;
+        } else if (numberValues === 'sixes') {
+            sixes = document.getElementById(numberValues).value;
+        };
+    }
+  addUpperSectionScoring();
+};
+// checkUpperSectionScoring();
+
+// console.log(aces)
+// console.log(twos)
+// console.log(threes)
+// console.log(fours)
+// console.log(fives)
+// console.log(sixes)
 
 // fn is checking for bonus on the uppersection scorring 
 // if your total score for the upper sction >= 63 then you get the bonus
@@ -66,10 +74,12 @@ const checkForBonus = function () {
     }
 };
 
-const checkUpperSectionScoring = function () {
+const addUpperSectionScoring = function () {
     upperSectionScoring = parseInt(aces) + parseInt(twos) + parseInt(threes) + parseInt(fours) + parseInt(fives) + parseInt(sixes);
-    checkForBonus();
+
     console.log(upperSectionScoring);
+
+    checkForBonus();
 }
 
 // checkForBonus();
